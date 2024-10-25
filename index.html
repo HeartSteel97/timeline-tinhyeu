@@ -24,10 +24,9 @@
     </head>
     <body class="body">
         <div id="loader">
-            <div rel="like" style="text-align: center; height:130px;
-            width:130px;">
-                <p id="startbtn" style="text-align: center;font-size: 20px;margin-bottom: 0px;
-                margin-top: 85px;font-family: 'Pattaya', sans-serif;">Nhấn vào đây</p>
+            <div rel="like">
+                <p id="startbtn" style="text-align: center; font-size: 20px;margin-bottom: 0px;
+                margin-top: 85px;font-family: 'Pattaya', sans-serif; cursor:pointer;">Vợ yêu, nhấn vào đây</p>
             </div>
         </div>
         <div id="content" style="display: none !important;">
@@ -692,6 +691,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="public/theme/hoa.js"></script>
 
 
@@ -727,7 +727,21 @@
                     $('#pClick').addClass('tC');
                     setTimeout(function () {
                         $(".heart").removeClass('heartAnimation');
-                    }, 1000);
+                        Swal.fire({
+                            title: `Gặp nhau đâu dễ, duyên đôi ta như phép lạ<br>Nắm tay anh và mình hạnh phúc bước cùng nhau suốt đời em nhé!`,
+                            width: 600,
+                            padding: "3em",
+                            color: "#716add",
+                            confirmButtonText: "Vâng, em đồng ý",
+                            background: "#fff url(/images/trees.png)",
+                            backdrop: `
+                                        rgba(0,0,123,0.4)
+                                        url("/images/nyan-cat.gif")
+                                        left top
+                                        no-repeat
+                                      `
+                        });
+                    }, 100);
                 });
                 const startbtn = document.getElementById("startbtn");
                 const content = document.getElementById("content");
